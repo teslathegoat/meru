@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeruPay.com | Premium Payment Platform Domain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #2c2c2c;
+            --darker-bg: #1f1f1f;
+            --light-text: #f8f8f8;
+            --muted-text: #b8b8b8;
+            --accent-gold: #d4af37;
+            --accent-silver: #c0c0c0;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-hover: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 40px;
+            background-color: rgba(44, 44, 44, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Page View Counter */
+        .view-counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--muted-text);
+            font-weight: 300;
+            padding: 8px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .view-counter:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .view-counter i {
+            color: var(--accent-gold);
+            font-size: 12px;
+        }
+
+        .counter-number {
+            font-weight: 500;
+            color: var(--light-text);
+        }
+
+        /* Logo */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--light-text);
+            letter-spacing: 1px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        /* Main Content */
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* For Sale Sign */
+        .for-sale-container {
+            margin: 40px 0 60px;
+            position: relative;
+        }
+
+        .for-sale-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        .for-sale-text::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background-color: var(--accent-silver);
+        }
+
+        /* Domain Name */
+        .domain-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--light-text);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Tagline */
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--muted-text);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Premium Features */
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature:hover {
+            background-color: var(--card-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker-bg);
+            padding: 50px 20px 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-message {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            color: var(--muted-text);
+            font-size: 1rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-silver);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--muted-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .view-counter {
+                order: 2;
+            }
+
+            .logo {
+                order: 1;
+                font-size: 28px;
+            }
+
+            .for-sale-text {
+                font-size: 3.5rem;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="view-counter">
+                <i class="fas fa-eye"></i>
+                <span class="counter-number" id="viewCounter">0</span>
+                <span>views</span>
+            </div>
+            <div class="logo">MeruPay</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <h1 class="domain-name">MeruPay.com</h1>
+            <p class="tagline">A premium domain name for your next-generation payment platform</p>
+            
+            <div class="for-sale-container">
+                <div class="for-sale-text">For Sale</div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title">Premium Domain</h3>
+                    <p class="feature-description">Short, memorable, and brandable domain name perfect for a fintech startup.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Instant Recognition</h3>
+                    <p class="feature-description">Establish credibility and trust with a professional domain name.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Investment Value</h3>
+                    <p class="feature-description">Premium domains appreciate over time and are valuable digital assets.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p class="footer-message">MeruPay can be your payment platform</p>
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <span>Contact: </span>
+                <a href="mailto:technicaladk@gmail.com">technicaladk@gmail.com</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 MeruPay.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page view counter using localStorage
+        function updateViewCounter() {
+            // Get current counts from localStorage
+            let totalViews = parseInt(localStorage.getItem('merupay_total_views') || '0');
+            let userViews = parseInt(localStorage.getItem('merupay_user_views') || '0');
+            
+            // Increment counters
+            totalViews++;
+            userViews++;
+            
+            // Save updated counts
+            localStorage.setItem('merupay_total_views', totalViews.toString());
+            localStorage.setItem('merupay_user_views', userViews.toString());
+            
+            // Update display
+            document.getElementById('viewCounter').textContent = totalViews.toLocaleString();
+            
+            // Optional: Send to backend for global tracking
+            sendToBackend();
+        }
+
+        // Optional backend integration (commented out - requires server setup)
+        async function sendToBackend() {
+            /*
+            try {
+                const response = await fetch('https://your-api-endpoint.com/views', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        domain: 'merupay.com',
+                        timestamp: new Date().toISOString(),
+                        userAgent: navigator.userAgent
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    // Update with global count if available
+                    if (data.globalCount) {
+                        document.getElementById('viewCounter').textContent = data.globalCount.toLocaleString();
+                    }
+                }
+            } catch (error) {
+                console.log('Backend not available, using localStorage only');
+            }
+            */
+        }
+
+        // Initialize counter on page load
+        document.addEventListener('DOMContentLoaded', updateViewCounter);
+
+        // Add smooth scrolling for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
